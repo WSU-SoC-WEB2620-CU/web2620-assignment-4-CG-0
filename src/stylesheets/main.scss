@@ -1,1 +1,402 @@
 // Your styles go here
+
+/* Overall Styling */
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+/* CSS Grid */
+body {
+    display: grid;
+    grid-template-columns: repeat(51, 1fr);
+    grid-template-rows: 50px repeat(8, 1fr);
+    margin: 0;
+    background-color: #FFFDD0;
+}
+
+/* Navigation Bar */
+nav {
+    grid-area: 1 / 1 / 1 / span 51;
+    background-color: #7C0A02;
+}
+
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0px 25px;
+    padding: 15px 0px;
+    column-gap: 25px;
+}
+
+nav > ul > li:nth-child(4) {
+    margin-left: auto;
+}
+
+nav > ul > li > a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFFDD0;
+    transition: text-decoration 2s, font-size 1s;
+}
+
+nav > ul > li > #first {
+    color: white;
+    font-weight: bold;
+}
+
+nav > ul > li > a:hover {
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+/* Jumbotron */
+.jumbotron {
+    grid-area: 2 / 1 / 2 / span 51;
+    background-color: #B32134;
+}
+
+.jumboContent {
+    display: flex;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.left,
+.right {
+    width: 50%;
+}
+
+.left {
+    color: white;
+    margin-left: 15px;
+}
+
+.left > h1 {
+    text-align: center;
+}
+
+.left > p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.left > .button {
+    text-align: center;
+}
+
+.left >.button > button {
+    border: none;
+    background-color: white;
+    color: #B32134;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.firstWord {
+    color:#FFFDD0;
+}
+
+.secondWord {
+    color: white;
+}
+
+.animations {
+    display: flex;
+    font-weight: bold;
+}
+
+.color1,
+.color2 {
+    padding: 5px 7px;
+    border-radius: 4px;
+}
+
+.color1 {
+    color: #FFFDD0;
+    background-color: #7C0A02;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.color1:hover {
+    animation: 3s ease-in-out 4 firstChange;
+    @keyframes firstChange {
+        0% {
+            height: 30px;
+        }
+
+        100% {
+            height: 100px;
+            color: #7C0A02;
+            background-color: #FFFDD0;
+        }
+    }
+}
+
+.color2 {
+    color: white;
+    background-color: #7C0A02;
+}
+
+.color2:hover {
+    animation: 4s ease-in-out 4 secondChange;
+    @keyframes secondChange {
+        0% {
+            height: 30px;
+            width: 60px;
+        }
+
+        25% {
+            width: 300px;
+            height: 100px;
+            background-color: white;
+            color: #7C0A02;
+        }
+
+        50% {
+            background-color: #B32134;
+            color: #B32134;
+        }
+
+        75% {
+            height: 30px;
+            width:60px;
+        }
+
+        100% {
+            color: white;
+            background-color: #7C0A02;
+        }
+    }
+}
+
+/* Main Area */
+main {
+    grid-area: 3 / 8 / span 6 / span 37;
+}
+
+.title1 {
+    text-align: center;
+    font-size: 28px;
+    color: #7C0A02;
+    padding: 5px 0px 20px 0px;
+}
+
+.imgRow1 {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #7C0A02;
+    padding-bottom: 20px;
+}
+
+.newProd {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-top: 15px;
+}
+
+.newProd:not(:nth-child(4)) {
+    margin-right: 11px;
+}
+
+.newProd:not(:nth-child(1)) {
+    margin-left: 11px;
+}
+
+.newProdInfo {
+    width:100%;
+}
+
+.prodImg > img {
+    width: 100%;
+    height: 400px;
+    border: .5px solid #7C0A02;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.prodTitle,
+.smallTitle {
+    font-size: 15px;
+}
+
+.prodPrice,
+.smallPrice {
+    font-size: 11px;
+}
+
+.newProdInfo > button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: #FFFDD0;
+    background-color: #7C0A02;
+    font-size: 10px;
+    padding: 7px 0px;
+}
+
+.message {
+    border-top: 1px solid #7C0A02;
+    margin: 0px -10px;
+}
+
+.message > p {
+    font-size: 19px;
+    background-color: #BD0F03;
+    color: #FFFDD0;
+    padding: 10px 0px 10px 5px;
+    margin: 10px 10px 20px;
+}
+
+.title2 {
+    text-align: center;
+    font-size: 28px;
+    color: #7C0A02;
+    border-top: 1px solid #7C0A02;
+    margin: 0px -11px;
+    padding: 10px 0px;
+}
+
+.imgRow2 {
+    display: flex;
+    border-top: 1px solid #7C0A02;
+    padding-bottom: 20px;
+}
+
+.smallProdInfo {
+    margin-top: 15px;
+}
+
+.smallProdImg > img {
+    max-width: 100%;
+    height: 400px;
+    border: .5px solid #7C0A02;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.smallProd:not(:nth-child(6)) {
+    margin-right: 8px;
+}
+
+.smallProd:not(:nth-child(1)) {
+    margin-left: 8px;
+}
+
+.smallProdInfo > button {
+    width: 100%;
+    border: 1px solid #7C0A02;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 7px 0px;
+    background-color: #FFFDD0;
+    color: #7C0A02;
+}
+
+.imgRow3 {
+    display: flex;
+    border-top: 1px solid #7C0A02;
+    column-gap: 15px;
+}
+
+.imgListTitle > p {
+    font-size: 18px;
+}
+
+.imgListInfo:not(#lastList) {
+    padding-bottom: 30px;
+}
+
+.imgListInfo {
+    display: flex;
+    width: 100%;
+    
+}
+
+.listImg {
+    width: 30%;
+}
+
+.listImg > img {
+    max-width: 100%;
+    height: 100%;
+    border: .5px solid #7C0A02;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.listDesc {
+    margin-left: 9px;
+    width: 70%;
+}
+
+.descTitle {
+    margin-top: -3px;
+}
+
+.descText {
+    font-size: 12px;
+    margin-right: 28px;
+}
+
+/* Footer */
+footer {
+    grid-area: 9/ 1 / 9 / span 51;
+    background-color: #7C0A02;margin-top: 40px;
+}
+
+.footContent {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.smallEmptySpace {
+    width: 12.5%;
+}
+
+.FilledSpace1,
+.FilledSpace2,
+.bigEmptySpace {
+    width: 25%;
+}
+
+.FilledSpace1 {
+    color: white;
+}
+
+.FilledSpace1 > h4 {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: -3px;
+}
+
+.FilledSpace1 > p {
+    font-size: 14px;
+}
+
+.FilledSpace2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.FilledSpace2 > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.FilledSpace2 > ul > li > a {
+    text-decoration: none;
+    color: #FFFDD0;
+    font-size: 14px;
+}
